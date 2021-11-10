@@ -20,12 +20,12 @@ public class aaa
   public static void main(String[] args) throws Exception
   {
     int idx=0;
-    String host               = "146.56.99.3"; 
-    String port               = "1521"; 
-    String sid                = "DB0825_PDB1.sub02220758550.lavividvcn.oraclevcn.com"; 
-    String user               = "graph"; 
-    String password           = "WElcome##1234";
-    String graph              = "GRAPH_03";
+    String host               = "your oracle db ip"; 
+    String port               = "port"; 
+    String sid                = "servicename"; 
+    String user               = "db username"; 
+    String password           = "db password";
+    String graph              = "graph name";
         
     Connection conn = null;
     PgxPreparedStatement stmt = null;
@@ -41,7 +41,7 @@ public class aaa
       conn = pds.getConnection();
       conn.setAutoCommit(false);
       
-      ServerInstance instance = GraphServer.getInstance("https://152.67.201.65:7007", user, password.toCharArray());
+      ServerInstance instance = GraphServer.getInstance("your graph server ip", user, password.toCharArray());
       PgxSession session = instance.createSession("my-session");
 
       var statement = Files.readString(Path.of("C:\\developer\\workspace\\eclipse_workspace6\\springapp-graph\\src\\main\\java\\com\\oracle\\springapp\\service\\graph\\pgx\\create_graph_03.pgql"));

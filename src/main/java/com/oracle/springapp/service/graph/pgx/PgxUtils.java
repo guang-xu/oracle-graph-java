@@ -31,14 +31,14 @@ import oracle.pgx.config.PgRdbmsGraphConfig;
 
 @Component
 public class PgxUtils {
-	private String baseUrl = "http://152.67.201.65:7007";
-	private String username = "graph";
-	private String password = "WElcome##1234";
+	private String baseUrl = "your graph server ip";
+	private String username = "username";
+	private String password = "password";
 	private PgxSession session = null; 
 	private ServerInstance instance = null;
 	private String query = "";
 	private String sessionId = "";
-	private String jdbcUrl = "jdbc:oracle:thin:@146.56.99.3:1521/DB0825_PDB1.sub02220758550.lavividvcn.oraclevcn.com";
+	private String jdbcUrl = "jdbc:oracle:thin:@ip:port/servicename";
 	
 	
 	@Autowired
