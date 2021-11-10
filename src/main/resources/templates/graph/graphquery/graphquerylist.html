@@ -1,0 +1,30 @@
+<div th:fragment="query_list" class="col-sm-6 col-md-6 col-lg-6 border accordion">
+	<table class="table table-striped table-hover" id="graphtable">
+		<thead>
+			<tr>
+				<th width="5%">ID</th>
+				<th>Graph Name</th>
+				<th>Query Type</th>
+				<th>Query Name</th>
+				<th>Query Alias</th>
+				<th>Query Content</th>
+				<th>Create Date</th>
+				<th>Update Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="item:${result}">
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.graphName}"></td>
+					<td th:text="${item.queryType}"></td>
+					<td th:text="${item.queryName}"></td>
+					<td th:text="${item.queryAlias}"></td>
+					<td th:text="${item.queryContent}"></td>
+					<td th:text="${item.createDate}"></td>
+					<td th:text="${item.updateDate}"></td>
+				</tr>
+		</tbody>
+	</table>
+
+</div>
+</div>

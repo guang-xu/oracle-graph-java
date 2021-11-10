@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en" th:replace="common/head::head" />
+<link href="../css/app/graphquery/graphquery.css" rel="stylesheet" />
+<body style="height:100%">
+	<nav th:replace="common/header::common_header"/>
+	<div class='container-fluid'>
+		<div class="row">
+			<div th:replace="graph/graphquery/graphqueryinput::query_input" />
+			<div th:replace="graph/graphquery/graphquerylist::query_list" />
+		</div>
+	</div>
+	<div th:replace="common/foot-js::foot-js" />
+	<script src="../js/app/util.js"></script>
+	<script src="../js/app/graphquery/graphquery.js"></script>
+</body>
+
+</html>

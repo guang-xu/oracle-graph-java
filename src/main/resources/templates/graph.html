@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en" th:replace="common/head::head" />
+
+<body style="height:100%">
+	<nav th:replace="common/header::common_header"/>
+	<div class='container-fluid'>
+		<div class="row">
+			<div th:replace="graph/graphsearch/leftpannel::left_pannel" />
+			<div th:replace="graph/graphsearch/content::content" />
+		</div>
+	</div>
+	<div th:replace="common/foot-js::foot-js" />
+	<script src="../js/app/graphsearch/graphsearch.js"></script>
+	<script th:inline="javascript">
+		__graphQueryList  = [[${graphQuery}]];
+		init(__graphQueryList);
+	</script>
+</body>
+
+</html>

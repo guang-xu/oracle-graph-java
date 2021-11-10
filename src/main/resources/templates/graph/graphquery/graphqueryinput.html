@@ -1,0 +1,45 @@
+<div th:fragment="query_input" class="sidebar col-sm-6 col-md-6 col-lg-6 border accordion">
+	<form class="row" id="graphqueryform">
+		<div class="col-md-6">
+			<input type="hidden" name="id" id="id"/>
+			<label for="graphName" class="form-label">Graph Name</label>
+			<select class="form-select" aria-label="Default select example" name="graphName" id="graphName">
+				<option th:each="item:${graphNames}" th:value="${item}" th:text="${item}">${item}</option>
+			</select>
+		</div>
+		<div class="col-md-6">
+			<label for="queryType" class="form-label">Query Type</label>
+			<select class="form-select" aria-label="Default select example" name="queryType" id="queryType">
+				<option value="R">SELECT</option>
+				<option value="C">CREATE</option>
+				<option value="U">UPDATE</option>
+				<option value="D">DELETE</option>
+			</select>
+		</div>
+		<div class="col-md-6">
+			<label for="queryname" class="form-label">Query Name</label>
+			<input type="text" class="form-control" id="queryName" name="queryName">
+		</div>
+		<div class="col-md-6">
+			<label for="queryAlias" class="form-label">Query Alias</label>
+			<input type="text" class="form-control" id="queryAlias" name="queryAlias">
+		</div>
+		
+		<div class="col-12">
+			<label for="queryContent" class="form-label">Query Content</label>
+			<textarea class="form-control" id="queryContent" name="queryContent" rows="20"></textarea>
+		</div>
+		<div class="col-6">
+			<label for="createDate" class="form-label">Create Date</label>
+			<input type="text" class="form-control" id="createDate" name="createDate"
+				placeholder="Apartment, studio, or floor">
+		</div>
+		<div class="col-md-6">
+			<label for="updateDate" class="form-label">Update Date</label>
+			<input type="text" class="form-control" id="updateDate" name="updateDate">
+		</div>
+		<div class="col-auto">
+			<button type="button" onClick="doPostRequestWithForm('graphqueryform','http://localhost:8080/api/graphquery');" class="btn btn-primary mb-3">update & Insert</button>
+		</div>
+	</form>
+</div>

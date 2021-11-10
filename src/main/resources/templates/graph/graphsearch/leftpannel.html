@@ -1,0 +1,28 @@
+<div th:fragment="left_pannel" class="sijava springboot  处理带有 斜杠的debar col-sm-4 col-md-4 col-lg-4 border accordion">
+	<form class="row g-3" id="graphform">
+		<div class="col-md-3">
+			<label for="graphName" class="form-label">Graph Name</label>
+			<select class="form-select" aria-label="Default select example" name="graphName" id="graphName" onChange="graphNameChanged();">
+				<option th:each="item:${graphNames}" th:value="${item}" th:text="${item}">${item}</option>
+			</select>
+		</div>
+		<div class="col-md-9">
+			<label for="graphName" class="form-label">Graph Query</label>
+			<select class="form-select" aria-label="Default select example" name="graphQuery" id="graphQuery">
+				<option th:each="item:${graphNames}" th:value="${item}" th:text="${item}">${item}</option>
+			</select>
+		</div>
+		<div class="mb-3">
+			<label for="query" class="form-label">Example textarea</label>
+			<textarea class="form-control" id="query" name="query" rows="25"></textarea>
+		</div>
+		
+		<div class="col-auto spinner-button-area">
+			<button type="button" onClick="doGetRequest();" class="btn btn-primary mb-3 btn-execute-button">
+				 <span class="spinner-border spinner-border-sm btn-execute-loading" role="status" aria-hidden="true" style="display: none"></span>
+  				 <span class="btn-execute-loading" style="display: none">Loading...</span>
+  				 <span class="btn-execute-unload" aria-hidden="true">Run Query</span>
+			</button>
+		</div>
+	</form>
+</div>
